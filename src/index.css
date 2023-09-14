@@ -1,0 +1,19 @@
+.calendar-container {
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.calendar__week-box {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+}
+.calendar__week-box .calendar-week {
+  width: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.calendar-week.weekend {
+    color: red;
+}
