@@ -1,33 +1,15 @@
-import React from "react";
+import Divider from "./components/Divider";
+import Week from "./components/Week";
 
-function App() {
+function Calendar() {
+  const daysOfWeek = ["일", "월", "화", "수", "목", "금", "토"];
+ 
   return (
-    <div className="calendar-container">
-      <div className="calendar__week-box">
-        <div className="calendar-week weekend">
-          <span>일</span>
-        </div>
-        <div className="calendar-week">
-          <span>월</span>
-        </div>
-        <div className="calendar-week">
-          <span>화</span>
-        </div>
-        <div className="calendar-week">
-          <span>수</span>
-        </div>
-        <div className="calendar-week">
-          <span>목</span>
-        </div>
-        <div className="calendar-week">
-          <span>금</span>
-        </div>
-        <div className="calendar-week weekend">
-          <span>토</span>
-        </div>
-      </div>
+    <div data-testid="calendar-container" className="calendar-container">
+      <Week daysOfWeek={daysOfWeek} />
+      <Divider />
     </div>
   );
 }
 
-export default App;
+export default Calendar;
