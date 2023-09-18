@@ -30,9 +30,13 @@ function Calendar() {
     }
 
     for (let i = 1; i <= lastDay.getDate(); i++) {
+      const is토요일 = (firstDayOfWeek + i) % 7 === 0;
+      const is일요일 = (firstDayOfWeek + i) % 7 === 1;
       days.push({
         day: i,
         isCurrentMonth: true,
+        isWeekend: is토요일 || is일요일,
+        weekendType: is토요일 ? "토" : is일요일 ? "일" : "평일",
       });
     }
 
@@ -44,16 +48,30 @@ function Calendar() {
         });
       }
     }
-
-    return days;
+    return days as {
+      day: number;
+      isCurrentMonth: boolean;
+      isWeekend: boolean;
+      weekendType: "일" | "토" | "평일";
+    }[];
   };
 
-  
+  const prevMonth = () => {
+    const newDate = new Date(date.getFullYear(), date.getMonth() - 1);
+    setDate(newDate);
+  };
+
+  const nextMonth = () => {
+    const newDate = new Date(date.getFullYear(), date.getMonth() + 1);
+    setDate(newDate);
+  };
   return (
     <div data-testid="calendar-container" className="calendar-container">
+      <button type="button" onClick={() => nextMonth()}>
+        {`${date.getFullYear()}년 ${date.getMonth()}월`}
+      </button>
       <Week daysOfWeek={daysOfWeek} />
       <Divider />
-
       <Days days={getDaysInMonth(date)} />
     </div>
   );
