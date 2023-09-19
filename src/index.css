@@ -29,15 +29,16 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  border: none;
+  background: none;
 }
-.calendar__days-box .disable {
+.day-disable {
   color: #eee;
 }
-
-.calendar__days-box .saturday {
+.day-weekend__saturday {
   color: blue;
 }
-.calendar__days-box .sunday {
+.day-weekend__sunday {
   color: red;
 }
 .divider {
