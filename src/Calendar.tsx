@@ -77,22 +77,22 @@ const getDaysInMonth = (date: Date) => {
 function Calendar() {
   const daysOfWeek = ["일", "월", "화", "수", "목", "금", "토"];
   const [date, setDate] = useState(new Date());
-
+  const year = date.getFullYear();
+  const month = onNextMonthCheck(date.getMonth() + 1);
   const prevMonth = () => {
-    const newDate = new Date(date.getFullYear(), date.getMonth() - 1);
+    const newDate = new Date(year, date.getMonth() - 1);
     setDate(newDate);
   };
-
   const nextMonth = () => {
-    const newDate = new Date(date.getFullYear(), date.getMonth());
-    console.log(newDate)
+    const newDate = new Date(year, date.getMonth() + 1);
     setDate(newDate);
   };
   const handleDayClick = () => {};
+
   return (
     <div data-testid="calendar-container" className="calendar-container">
       <button type="button" onClick={() => nextMonth()}>
-        {`${date.getFullYear()}년 ${date.getMonth()}월`}
+        {`${year}년 ${month}월`}
       </button>
       <Week daysOfWeek={daysOfWeek} />
       <Divider />
