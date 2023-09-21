@@ -1,4 +1,4 @@
-import { DayType } from "../Calendar";
+import { DayType } from "../types";
 
 type Props = {
   days: DayType[];
