@@ -3,6 +3,7 @@ import Divider from "./components/Divider";
 import { useState } from "react";
 import Days from "./components/Days";
 import { createDays } from "./lib/utils";
+import MonthViewBox from "./components/MonthViewBox";
 
 function Calendar() {
   const daysOfWeek = ["일", "월", "화", "수", "목", "금", "토"];
@@ -21,9 +22,12 @@ function Calendar() {
 
   return (
     <div data-testid="calendar-container" className="calendar-container">
-      <button type="button" onClick={() => nextMonth()}>
-        {`${year}년 ${month}월`}
-      </button>
+      <MonthViewBox
+        date={date}
+        setDate={setDate}
+        prevMonth={prevMonth}
+        nextMonth={nextMonth}
+      />
       <Week daysOfWeek={daysOfWeek} />
       <Divider />
       <Days days={createDays(date)} handleDayClick={handleDayClick} />
