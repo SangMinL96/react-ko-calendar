@@ -10,7 +10,7 @@ function Week({
   daysOfWeek = [],
 }: Props) {
   return (
-    <div className="calendar__week-box">
+    <div className="calendar-container__week_view">
       {daysOfWeek.map((day) => {
         const isWeekend = day === "토" || day === "일";
         const color = day === "토" ? saturdayColor : sundayColor;
@@ -18,7 +18,7 @@ function Week({
           return (
             <div
               key={day}
-              className={`calendar-week weekend`}
+              className={`calendar-container__week_view week_day weekend`}
               style={{ color }}
             >
               <span>{day}</span>
@@ -26,7 +26,7 @@ function Week({
           );
         }
         return (
-          <div key={day} className="calendar-week">
+          <div key={day} className="calendar-container__week_view week_day">
             <span>{day}</span>
           </div>
         );

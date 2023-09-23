@@ -11,12 +11,12 @@ function MonthViewBox({ date, setDate, prevMonth, nextMonth }: Props) {
   const year = date.getFullYear();
   const month = date.getMonth() + 1;
   return (
-    <div className="month_view">
-      <button type="button" className="month_view prev_btn" onClick={prevMonth}>
+    <div className="calendar-container__month_view">
+      <button type="button" className="calendar-container__month_view prev_btn" onClick={prevMonth}>
         {"<"}
       </button>
-      <strong className="month_view cur_month">{`${year}년 ${month}월`}</strong>
-      <button type="button" className="month_view next_btn" onClick={nextMonth}>
+      <strong className="calendar-container__month_view cur_month">{`${year}년 ${month}월`}</strong>
+      <button type="button" className="calendar-container__month_view next_btn" onClick={nextMonth}>
         {">"}
       </button>
     </div>

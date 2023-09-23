@@ -8,25 +8,25 @@
   width: 100%;
 }
 
-.calendar__week-box {
+.calendar-container__week_view {
   width: 100%;
   display: grid;
   grid-template-columns: repeat(7, 1fr);
 }
-.calendar__week-box .calendar-week {
+.calendar-container__week_view .week_day {
   width: auto;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.calendar__days-box {
+.calendar-container__day_view {
   width: 100%;
   display: grid;
   grid-template-columns: repeat(7, 1fr);
 }
 
-.calendar__days-box .calendar-day {
+.calendar-container__day_view .day {
   width: auto;
   padding: 20px 0;
   display: flex;
@@ -35,13 +35,13 @@
   border: none;
   background: none;
 }
-.day-disable {
+.calendar-container__day_view .day .disable {
   color: #eee;
 }
-.day-weekend__saturday {
+.calendar-container__day_view .day .weekend_saturday {
   color: blue;
 }
-.day-weekend__sunday {
+.calendar-container__day_view .day .weekend_sunday {
   color: red;
 }
 .divider {
@@ -51,7 +51,7 @@
   background-color: #eee;
 }
 
-.month_view {
+.calendar-container__month_view {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -59,7 +59,7 @@
   height: 30px;
   margin-bottom: 20px;
 }
-.month_view > button {
+.calendar-container__month_view > button {
   padding: 0 8px;
   width: 30px;
   max-width: 30px;
@@ -68,7 +68,7 @@
   border: none;
   margin-bottom: 0;
 }
-.month_view .cur_month {
+.calendar-container__month_view .cur_month {
   width: auto;
   display: inline-flex;
   justify-content: center;
