@@ -1,9 +1,9 @@
-import Week from "./components/Week";
-import Divider from "./components/Divider";
 import { useState } from "react";
 import Days from "./components/Days";
-import { createDays } from "./lib/utils";
+import Divide from "./components/Divide";
 import MonthViewBox from "./components/MonthViewBox";
+import Week from "./components/Week";
+import { createDays } from "./lib/utils";
 
 function Calendar() {
   const daysOfWeek = ["일", "월", "화", "수", "목", "금", "토"];
@@ -20,6 +20,7 @@ function Calendar() {
   };
   const handleDayClick = () => {};
 
+
   return (
     <div data-testid="calendar-container" className="calendar-container">
       <MonthViewBox
@@ -29,7 +30,7 @@ function Calendar() {
         nextMonth={nextMonth}
       />
       <Week daysOfWeek={daysOfWeek} />
-      <Divider />
+      <Divide />
       <Days days={createDays(date)} handleDayClick={handleDayClick} />
     </div>
   );

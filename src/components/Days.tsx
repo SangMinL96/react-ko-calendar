@@ -7,13 +7,13 @@ type Props = {
 
 function Days({ days }: Props) {
   return (
-    <div className=".calendar-container__day_view">
+    <div className="calendar-container__day_view">
       {days.map(({ day, isCurrentMonth, isWeekend, weekendType }, index) => {
         let classNames;
         if (!isCurrentMonth) {
-          classNames = `.calendar-container__day_view day disable`;
+          classNames = `calendar-container__day_view day disable`;
         } else if (isWeekend) {
-          classNames = `.calendar-container__day_view day weekend_${
+          classNames = `calendar-container__day_view day weekend_${
             weekendType === "토"
               ? "saturday"
               : weekendType === "일"
@@ -21,7 +21,7 @@ function Days({ days }: Props) {
               : ""
           }`;
         } else {
-          classNames = "day";
+          classNames = "calendar-container__day_view day";
         }
         return (
           <button type="button" key={index} className={classNames}>
