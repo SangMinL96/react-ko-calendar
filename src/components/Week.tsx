@@ -18,7 +18,7 @@ function Week({
           return (
             <div
               key={day}
-              className={`calendar-container__week_view week_day weekend`}
+              className={`calendar-container__week_view weekend`}
               style={{ color }}
             >
               <span>{day}</span>
@@ -26,7 +26,7 @@ function Week({
           );
         }
         return (
-          <div key={day} className="calendar-container__week_view week_day">
+          <div key={day} className="calendar-container__week_view day">
             <span>{day}</span>
           </div>
         );
