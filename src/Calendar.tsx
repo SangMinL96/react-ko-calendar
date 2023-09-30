@@ -4,7 +4,7 @@ import { useCallback, useEffect, useState } from "react";
 import Days from "./components/Days";
 import { createDays } from "./lib/utils";
 import MonthViewBox from "./components/MonthViewBox";
-import convert from 'xml-js'
+import xml2js from "xml2js";
 
 function Calendar() {
   const daysOfWeek = ["일", "월", "화", "수", "목", "금", "토"];
@@ -21,18 +21,28 @@ function Calendar() {
   };
   const handleDayClick = () => {};
 
-  const koDataFetch = useCallback(
+  const getRestDeInfo = useCallback(
     async ({ year, month }: { year: number; month: number }) => {
       try {
-        const key =
-          "RuisYCPqCgrosEWifzLwNKy0uKJfIJRsi2P1oTajDmnKKVHLSl%2B5OiOxuoTJy%2FlV3Lrk%2B0AucvB5TV%2FJ55ynUQ%3D%3D";
-        const res = await fetch(
-          `http://apis.data.go.kr/B090041/openapi/service/SpcdeInfoService/getAnniversaryInfo?serviceKey=${key}&solYear=${year}&solMonth=0${month}`
-        );
-        console.log(res)
-        const result = await res.json();
-        var result1 = convert.xml2json(result, {compact: false, spaces: 4});
-        console.log(result1);
+        const key = process.env.REACT_APP_KEY;
+        const xhr = new XMLHttpRequest();
+        const url =
+          "http://apis.data.go.kr/B090041/openapi/service/SpcdeInfoService/getRestDeInfo"; /*URL*/
+        let queryParams = `?serviceKey=${key}&solYear=${year}&solMonth=0${month}`;
+        xhr.open("GET", url + queryParams);
+        xhr.onreadystatechange = function () {
+          if (this.readyState === 4) {
+            xml2js.parseString(this.responseText, (err, result) => {
+              if (err) {
+                console.error("XML 파싱 오류:", err);
+              } else {
+                // JSON 데이터를 상태에 저장합니다.
+                console.log(result);
+              }
+            });
+          }
+        };
+        xhr.send("");
       } catch (err) {
         console.error(err);
       }
@@ -41,8 +51,8 @@ function Calendar() {
   );
 
   useEffect(() => {
-    koDataFetch({ year, month });
-  }, [koDataFetch, year, month]);
+    getRestDeInfo({ year, month });
+  }, [getRestDeInfo, year, month]);
   return (
     <div data-testid="calendar-container" className="calendar-container">
       <MonthViewBox
