@@ -5,9 +5,16 @@ type Props = {
   year: number;
   month: number;
 };
+type DataType = {
+  dateKind: string[];
+  dateName: string[];
+  isHoliday: "Y" | "N"[];
+  locdate: string[];
+  seq: string[];
+};
 
-export const useSpecialDayData = async ({ year, month }: Props) => {
-  const [data, setData] = useState([]);
+export const useSpecialDayData = ({ year, month }: Props) => {
+  const [data, setData] = useState<DataType[]>([]);
   const getRestDeInfo = useCallback(async () => {
     try {
       const realMonth = month < 10 ? `0${month}` : month;
@@ -37,5 +44,8 @@ export const useSpecialDayData = async ({ year, month }: Props) => {
   useEffect(() => {
     getRestDeInfo();
   }, [getRestDeInfo]);
-  return data;
+  return data?.map((item) => ({
+    date: item.locdate[0],
+    name: item.dateName[0],
+  }));
 };
