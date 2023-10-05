@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 type Props = {
   date: Date;
@@ -10,29 +10,114 @@ type Props = {
 function MonthViewBox({ date, setDate, prevMonth, nextMonth }: Props) {
   const year = date.getFullYear();
   const month = date.getMonth() + 1;
+  const [isDropdown, setIsDropdown] = useState(false);
+
+  const handleDropDown = (value: boolean) => {
+    setIsDropdown(value);
+  };
+
   return (
-    <div className="calendar-container__month_view">
-      <button type="button" className="calendar-container__month_view__prev_btn" onClick={prevMonth}>
+    <div
+      className="calendar-container__month_view"
+      tabIndex={0}
+      role="button"
+      onBlur={(ev) => {
+        setTimeout(() => handleDropDown(false), 0);
+      }}
+      onClick={() => handleDropDown(true)}
+    >
+      <button
+        type="button"
+        className="calendar-container__month_view__prev_btn"
+        onClick={prevMonth}
+      >
         {"<"}
       </button>
       <strong className="calendar-container__month_view cur_month">{`${year}년 ${month}월`}</strong>
-      <button type="button" className="calendar-container__month_view__next_btn" onClick={nextMonth}>
+      <button
+        type="button"
+        className="calendar-container__month_view__next_btn"
+        onClick={nextMonth}
+      >
         {">"}
       </button>
-      <div className="calendar-container__month_dropbox">
-        <button type="button" className="calendar-container__month_dropbox__button active">1월</button>
-        <button type="button" className="calendar-container__month_dropbox__button">2월</button>
-        <button type="button" className="calendar-container__month_dropbox__button">3월</button>
-        <button type="button" className="calendar-container__month_dropbox__button">4월</button>
-        <button type="button" className="calendar-container__month_dropbox__button">5월</button>
-        <button type="button" className="calendar-container__month_dropbox__button">6월</button>
-        <button type="button" className="calendar-container__month_dropbox__button">7월</button>
-        <button type="button" className="calendar-container__month_dropbox__button">8월</button>
-        <button type="button" className="calendar-container__month_dropbox__button">9월</button>
-        <button type="button" className="calendar-container__month_dropbox__button">10월</button>
-        <button type="button" className="calendar-container__month_dropbox__button">11월</button>
-        <button type="button" className="calendar-container__month_dropbox__button">12월</button>
-      </div>
+      {isDropdown && (
+        <div className="calendar-container__month_dropbox">
+          <button
+            type="button"
+            className="calendar-container__month_dropbox__button active"
+            onClick={() => console.log("aets")}
+          >
+            1월
+          </button>
+          <button
+            type="button"
+            className="calendar-container__month_dropbox__button"
+          >
+            2월
+          </button>
+          <button
+            type="button"
+            className="calendar-container__month_dropbox__button"
+          >
+            3월
+          </button>
+          <button
+            type="button"
+            className="calendar-container__month_dropbox__button"
+          >
+            4월
+          </button>
+          <button
+            type="button"
+            className="calendar-container__month_dropbox__button"
+          >
+            5월
+          </button>
+          <button
+            type="button"
+            className="calendar-container__month_dropbox__button"
+          >
+            6월
+          </button>
+          <button
+            type="button"
+            className="calendar-container__month_dropbox__button"
+          >
+            7월
+          </button>
+          <button
+            type="button"
+            className="calendar-container__month_dropbox__button"
+          >
+            8월
+          </button>
+          <button
+            type="button"
+            className="calendar-container__month_dropbox__button"
+          >
+            9월
+          </button>
+          <button
+            type="button"
+            className="calendar-container__month_dropbox__button"
+          >
+            10월
+          </button>
+          <button
+            type="button"
+            className="calendar-container__month_dropbox__button"
+          >
+            11월
+          </button>
+          <button
+            type="button"
+            className="calendar-container__month_dropbox__button"
+          >
+            12월
+          </button>
+        </div>
+      )}
     </div>
   );
 }
