@@ -31,7 +31,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
+  width: 115px;
   height: 30px;
   margin-bottom: 20px;
 }
@@ -45,6 +45,15 @@
   border: none;
   margin-bottom: 0;
 }
+.calendar-container__month_view__prev_btn {
+  position: absolute;
+  left: -20px;
+}
+.calendar-container__month_view__next_btn {
+  position: absolute;
+  right: -20px;
+}
+
 .calendar-container__month_view.cur_month {
   width: auto;
   display: inline-flex;
