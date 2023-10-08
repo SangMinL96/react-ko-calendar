@@ -12,7 +12,6 @@ function Calendar() {
   const year = date.getFullYear();
   const month = date.getMonth() + 1;
   const sData = useSpecialDayData({ year, month });
-  console.log(sData);
   const prevMonth = () => {
     const newDate = new Date(year, date.getMonth() - 1);
     setDate(newDate);
