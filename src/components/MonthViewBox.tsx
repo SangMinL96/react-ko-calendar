@@ -17,15 +17,7 @@ function MonthViewBox({ date, setDate, prevMonth, nextMonth }: Props) {
   };
 
   return (
-    <div
-      className="calendar-container__month_view"
-      tabIndex={0}
-      role="button"
-      onBlur={(ev) => {
-        setTimeout(() => handleDropDown(false), 0);
-      }}
-      onClick={() => handleDropDown(true)}
-    >
+    <div className="calendar-container__month_view">
       <button
         type="button"
         className="calendar-container__month_view__prev_btn"
@@ -33,7 +25,15 @@ function MonthViewBox({ date, setDate, prevMonth, nextMonth }: Props) {
       >
         {"<"}
       </button>
-      <strong className="calendar-container__month_view cur_month">{`${year}년 ${month}월`}</strong>
+      <strong
+        tabIndex={0}
+        role="button"
+        onBlur={(ev) => {
+          setTimeout(() => handleDropDown(false), 0);
+        }}
+        onClick={() => handleDropDown(true)}
+        className="calendar-container__month_view cur_month"
+      >{`${year}년 ${month}월`}</strong>
       <button
         type="button"
         className="calendar-container__month_view__next_btn"
