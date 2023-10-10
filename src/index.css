@@ -120,3 +120,31 @@
   margin: 10px 0;
   background-color: #eee;
 }
+
+.carousel_container {
+  position: relative;
+  overflow: hidden;
+  user-select: none;
+  cursor: grab;
+  width: 100%;
+  max-width: 100%;
+  min-width: 100%;
+  height: 100vh;
+}
+.carousel_wrapper {
+  display: flex;
+  position: absolute;
+  justify-content: center;
+  height: 100vh;
+  left: 0;
+  overflow: hidden;
+}
+.carousel_slide {
+  width: 480px;
+  height:100vh;
+  margin-right: 0px;
+  background-color: red;
+}
+.carousel_slide:nth-last-child(1) {
+  margin-right: 0px;
+}

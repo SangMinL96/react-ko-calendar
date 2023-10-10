@@ -1,12 +1,15 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Days from "./components/Days";
 import Divide from "./components/Divide";
 import MonthViewBox from "./components/MonthViewBox";
 import Week from "./components/Week";
 import { useSpecialDayData } from "./hooks/useSpecialDayData";
 import { createDays } from "./lib/utils";
+import { useSwiper } from "./hooks/useSwiper";
 
 function Calendar() {
+  const { draggable, onSwipe } = useSwiper();
+
   const daysOfWeek = ["일", "월", "화", "수", "목", "금", "토"];
   const [date, setDate] = useState(new Date());
   const year = date.getFullYear();
@@ -22,8 +25,17 @@ function Calendar() {
   };
   const handleDayClick = () => {};
 
+  useEffect(() => {
+    if (onSwipe) {
+      onSwipe((test: any) => console.log(test));
+    }
+  }, [onSwipe]);
   return (
-    <div data-testid="calendar-container" className="calendar-container">
+    <div
+      {...draggable}
+      data-testid="calendar-container"
+      className="calendar-container"
+    >
       <MonthViewBox
         date={date}
         setDate={setDate}
