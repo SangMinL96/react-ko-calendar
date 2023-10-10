@@ -141,10 +141,27 @@
 }
 .carousel_slide {
   width: 480px;
-  height:100vh;
+  height: 100vh;
   margin-right: 0px;
   background-color: red;
 }
 .carousel_slide:nth-last-child(1) {
   margin-right: 0px;
+}
+
+.carousel {
+  width: 100%;
+}
+.carousel__slides {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+}
+.carousel__slides_slide {
+  flex: 0 0 auto;
+  width: 100%;
+  height: 100%;
+  scroll-snap-align: start;
 }
