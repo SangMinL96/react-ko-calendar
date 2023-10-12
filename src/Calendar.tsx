@@ -27,7 +27,7 @@ function Calendar() {
 
   useEffect(() => {
     if (onSwipe) {
-      onSwipe((test: any) => console.log(test));
+      onSwipe((test: any) => prevMonth());
     }
   }, [onSwipe]);
   return (
