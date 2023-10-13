@@ -24,12 +24,6 @@ function Calendar() {
     setDate(newDate);
   };
   const handleDayClick = () => {};
-
-  useEffect(() => {
-    if (onSwipe) {
-      onSwipe((test: any) => prevMonth());
-    }
-  }, [onSwipe]);
   return (
     <div
       {...draggable}
