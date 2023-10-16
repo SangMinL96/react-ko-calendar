@@ -13,8 +13,8 @@ function Calendar() {
   const daysOfWeek = ["일", "월", "화", "수", "목", "금", "토"];
   const [date, setDate] = useState(new Date());
   const year = date.getFullYear();
-  // const month = date.getMonth() + 1;
-  // const sData = useSpecialDayData({ year, month });
+  const month = date.getMonth() + 1;
+  const sData = useSpecialDayData({ year, month });
   const prevMonth = () => {
     const newDate = new Date(year, date.getMonth() - 1);
     setDate(newDate);
