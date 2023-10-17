@@ -41,9 +41,7 @@ export const useSpecialDayData = ({ year, month }: Props) => {
     }
   }, [year, month]);
 
-  useEffect(() => {
-    getRestDeInfo();
-  }, [getRestDeInfo]);
+  // use
   return data?.map((item) => ({
     date: item.locdate[0],
     name: item.dateName[0],
