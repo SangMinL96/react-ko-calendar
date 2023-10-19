@@ -55,7 +55,7 @@ function SwiperProvider({ children, onSwiper, isSwipe = false }: Props) {
 
 		xFirstTouchValue.current = 0;
 		setIsDragging(false);
-	}, []);
+	}, [onSwiper]);
 	return (
 		<div onTouchStart={handleTouchStart} onTouchMove={handleTouchMove} onTouchEnd={handleTouchEnd}>
 			{children}
