@@ -14,15 +14,19 @@ dayjs.locale('ko');
 function Calendar() {
 	const daysOfWeek = ['일', '월', '화', '수', '목', '금', '토'];
 	const [date, setDate] = useState<Date>(new Date());
-	// const sData = useSpecialDayData({ year, month });
+	const year = dayjs(date).get('year');
+	const month = dayjs(date).get('month') + 1;
+	const sData = useSpecialDayData({ year, month });
+	console.log(sData);
 	const prevMonth = () => {
-		setDate((prev) => dayjs(prev).subtract(1, 'day').toDate());
+		setDate((prev) => dayjs(prev).subtract(1, 'month').toDate());
 	};
 	const nextMonth = () => {
-		setDate((prev) => dayjs(prev).add(1, 'day').toDate());
+		setDate((prev) => dayjs(prev).add(1, 'month').toDate());
 	};
 	const onSwiper = (e: 'left' | 'right' | 'fail') => {
 		if (e === 'left') {
+			console.log('sdfa');
 			prevMonth();
 		}
 		if (e === 'right') {
@@ -33,7 +37,7 @@ function Calendar() {
 	return (
 		<SwiperProvider onSwiper={onSwiper}>
 			<div data-testid="calendar-container" className="calendar-container">
-				<MonthViewBox date={date} setDate={setDate} prevMonth={prevMonth} nextMonth={nextMonth} />
+				<MonthViewBox year={year} month={month} prevMonth={prevMonth} nextMonth={nextMonth} />
 				<Week daysOfWeek={daysOfWeek} />
 				<Divide />
 				<Days days={createDays(date)} handleDayClick={handleDayClick} />
