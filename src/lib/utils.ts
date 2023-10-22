@@ -24,6 +24,7 @@ const onNextMonthCheck = (month: number) => {
 	}
 	return month;
 };
+export const ddFormat = (n: number) => (n < 10 ? `0${n}` : n);
 
 export const createDays = (date: Date) => {
 	const days = [];
@@ -34,8 +35,6 @@ export const createDays = (date: Date) => {
 	const prevMonthLastDate = dayjs(date).subtract(1, 'month').endOf('month').date(); // 이전 달의 마지막 날을 가져옵니다.
 	const firstDayOfWeek = dayjs(firstDay).day(); // 현재 월의 첫 번째 날의 요일을 가져옵니다.
 	const lastDayOfWeek = dayjs(lastDay).day(); // 현재 월의 마지막 날의 요일을 가져옵니다.
-
-	const ddFormat = (n: number) => (n < 10 ? `0${n}` : n);
 
 	// 이전 달의 마지막 날짜를 추가
 	for (let i = prevMonthLastDate - firstDayOfWeek + 1; i <= prevMonthLastDate; i++) {

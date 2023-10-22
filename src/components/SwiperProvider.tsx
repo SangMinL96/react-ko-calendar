@@ -14,7 +14,9 @@ function SwiperProvider({ children, onSwiper, isSwipe = false }: Props) {
 	 * @const xValue 마우스 커서 x위치
 	 */
 	const handleTouchStart = useCallback((ev: any) => {
-		const xValue = (ev as TouchEvent).touches ? (ev as TouchEvent).touches?.[0]?.clientX : (ev as MouseEvent)?.screenX;
+		const xValue = (ev as TouchEvent).touches
+			? (ev as TouchEvent).touches?.[0]?.clientX
+			: (ev as MouseEvent)?.screenX;
 		xMoveValue.current = xValue;
 		xFirstTouchValue.current = xValue;
 		setIsDragging(true);
@@ -28,7 +30,9 @@ function SwiperProvider({ children, onSwiper, isSwipe = false }: Props) {
 	const handleTouchMove = useCallback(
 		(ev: any) => {
 			if (isDragging) {
-				const xValue = (ev as TouchEvent).touches ? (ev as TouchEvent).touches?.[0]?.clientX : (ev as MouseEvent)?.screenX;
+				const xValue = (ev as TouchEvent).touches
+					? (ev as TouchEvent).touches?.[0]?.clientX
+					: (ev as MouseEvent)?.screenX;
 				xMoveValue.current = xValue;
 			}
 		},
@@ -57,7 +61,12 @@ function SwiperProvider({ children, onSwiper, isSwipe = false }: Props) {
 		setIsDragging(false);
 	}, [onSwiper]);
 	return (
-		<div onTouchStart={handleTouchStart} onTouchMove={handleTouchMove} onTouchEnd={handleTouchEnd}>
+		<div
+			style={{ height: 'auto' }}
+			onTouchStart={handleTouchStart}
+			onTouchMove={handleTouchMove}
+			onTouchEnd={handleTouchEnd}
+		>
 			{children}
 		</div>
 	);

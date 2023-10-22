@@ -1,15 +1,17 @@
-import { DayType } from '../types';
+import dayjs from 'dayjs';
+import { DayType, sDataType } from '../types';
 
 type Props = {
 	days: DayType[];
 	handleDayClick: () => void;
+	sData?: sDataType[];
 };
 
-function Days({ days }: Props) {
-	console.log(days);
+function Days({ days, sData }: Props) {
 	return (
 		<div className="calendar-container__day_view">
 			{days.map(({ day, isCurrentMonth, isWeekend, weekendType }, index) => {
+				const sDate = sData?.find((f) => dayjs(f.date).get('day') === day);
 				let classNames;
 				if (!isCurrentMonth) {
 					classNames = `calendar-container__day_view__day disable`;
@@ -22,7 +24,10 @@ function Days({ days }: Props) {
 				}
 				return (
 					<button type="button" key={index} className={classNames}>
-						{day}
+						<span className="calendar-container__day_view__day__txt">{day}</span>
+						{sDate?.name && (
+							<strong className="calendar-container__day_view__day__sday">{sDate?.name}</strong>
+						)}
 					</button>
 				);
 			})}

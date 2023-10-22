@@ -17,7 +17,6 @@ function Calendar() {
 	const year = dayjs(date).get('year');
 	const month = dayjs(date).get('month') + 1;
 	const sData = useSpecialDayData({ year, month });
-	console.log(sData);
 	const prevMonth = () => {
 		setDate((prev) => dayjs(prev).subtract(1, 'month').toDate());
 	};
@@ -26,7 +25,6 @@ function Calendar() {
 	};
 	const onSwiper = (e: 'left' | 'right' | 'fail') => {
 		if (e === 'left') {
-			console.log('sdfa');
 			prevMonth();
 		}
 		if (e === 'right') {
@@ -39,8 +37,7 @@ function Calendar() {
 			<div data-testid="calendar-container" className="calendar-container">
 				<MonthViewBox year={year} month={month} prevMonth={prevMonth} nextMonth={nextMonth} />
 				<Week daysOfWeek={daysOfWeek} />
-				<Divide />
-				<Days days={createDays(date)} handleDayClick={handleDayClick} />
+				<Days days={createDays(date)} sData={sData} handleDayClick={handleDayClick} />
 			</div>
 		</SwiperProvider>
 	);
