@@ -11,7 +11,10 @@ import 'dayjs/locale/es'; // load on demand
 
 dayjs.locale('ko');
 
-function Calendar() {
+type Props = {
+	tileContent?: (date: string) => React.ReactElement;
+};
+function Calendar({ tileContent }: Props) {
 	const daysOfWeek = ['일', '월', '화', '수', '목', '금', '토'];
 	const [date, setDate] = useState<Date>(new Date());
 	const year = dayjs(date).get('year');
@@ -32,12 +35,18 @@ function Calendar() {
 		}
 	};
 	const handleDayClick = () => {};
+
 	return (
 		<SwiperProvider onSwiper={onSwiper}>
 			<div data-testid="calendar-container" className="calendar-container">
 				<MonthViewBox year={year} month={month} prevMonth={prevMonth} nextMonth={nextMonth} />
 				<Week daysOfWeek={daysOfWeek} />
-				<Days days={createDays(date)} sData={sData} handleDayClick={handleDayClick} />
+				<Days
+					tileContent={tileContent}
+					days={createDays(date)}
+					sData={sData}
+					handleDayClick={handleDayClick}
+				/>
 			</div>
 		</SwiperProvider>
 	);

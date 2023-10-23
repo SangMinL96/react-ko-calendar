@@ -4,13 +4,14 @@ import { DayType, sDataType } from '../types';
 type Props = {
 	days: DayType[];
 	handleDayClick: () => void;
+	tileContent?: (date: string) => React.ReactElement;
 	sData?: sDataType[];
 };
 
-function Days({ days, sData }: Props) {
+function Days({ days, sData, tileContent }: Props) {
 	return (
 		<div className="calendar-container__day_view">
-			{days.map(({ day, isCurrentMonth, isWeekend, weekendType }, index) => {
+			{days.map(({ day, date, isCurrentMonth, isWeekend, weekendType }, index) => {
 				const sDate = sData?.find((f) => dayjs(f.date).get('day') === day);
 				let classNames;
 				if (!isCurrentMonth) {
@@ -28,6 +29,7 @@ function Days({ days, sData }: Props) {
 						{sDate?.name && (
 							<strong className="calendar-container__day_view__day__sday">{sDate?.name}</strong>
 						)}
+						{tileContent && tileContent(date)}
 					</button>
 				);
 			})}

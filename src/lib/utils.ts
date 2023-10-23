@@ -40,7 +40,7 @@ export const createDays = (date: Date) => {
 	for (let i = prevMonthLastDate - firstDayOfWeek + 1; i <= prevMonthLastDate; i++) {
 		days.push({
 			day: i,
-			data: `${year}/${ddFormat(month - 1)}/${ddFormat(i)}`,
+			date: `${year}/${ddFormat(month - 1)}/${ddFormat(i)}`,
 			isCurrentMonth: false,
 			goToClick: 'back',
 			label: `${year}년 ${ddFormat(onPrevMonthCheck(month - 1))}월 ${ddFormat(i)}일`,
@@ -52,7 +52,7 @@ export const createDays = (date: Date) => {
 		const is일요일 = (firstDayOfWeek + i) % 7 === 1;
 		days.push({
 			day: i,
-			data: `${year}/${ddFormat(month)}/${ddFormat(i)}`,
+			date: `${year}/${ddFormat(month)}/${ddFormat(i)}`,
 			isCurrentMonth: true,
 			isWeekend: is토요일 || is일요일,
 			weekendType: is토요일 ? '토' : is일요일 ? '일' : '평일',
@@ -64,7 +64,7 @@ export const createDays = (date: Date) => {
 		for (let i = 1; i <= 6 - lastDayOfWeek; i++) {
 			days.push({
 				day: i,
-				data: `${year}/${ddFormat(month + 1)}/${ddFormat(i)}`,
+				date: `${year}/${ddFormat(month + 1)}/${ddFormat(i)}`,
 				goToClick: 'forward',
 				isCurrentMonth: false,
 				label: `${year}년 ${ddFormat(onNextMonthCheck(month + 1))}월 ${i}일`,
