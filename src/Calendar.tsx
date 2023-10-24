@@ -1,13 +1,12 @@
-import { useEffect, useState } from 'react';
+import dayjs from 'dayjs';
+import 'dayjs/locale/es'; // load on demand
+import { useState } from 'react';
 import Days from './components/Days';
-import Divide from './components/Divide';
 import MonthViewBox from './components/MonthViewBox';
+import SwiperProvider from './components/SwiperProvider';
 import Week from './components/Week';
 import { useSpecialDayData } from './hooks/useSpecialDayData';
 import { createDays } from './lib/utils';
-import SwiperProvider from './components/SwiperProvider';
-import dayjs from 'dayjs';
-import 'dayjs/locale/es'; // load on demand
 
 dayjs.locale('ko');
 
@@ -20,6 +19,7 @@ function Calendar({ tileContent }: Props) {
 	const year = dayjs(date).get('year');
 	const month = dayjs(date).get('month') + 1;
 	const sData = useSpecialDayData({ year, month });
+
 	const prevMonth = () => {
 		setDate((prev) => dayjs(prev).subtract(1, 'month').toDate());
 	};
@@ -34,12 +34,17 @@ function Calendar({ tileContent }: Props) {
 			nextMonth();
 		}
 	};
+
+	const handleMonthChange = (propsDate: string) => {
+		setDate(dayjs(propsDate).toDate());
+	};
+
 	const handleDayClick = () => {};
 
 	return (
 		<SwiperProvider onSwiper={onSwiper}>
 			<div data-testid="calendar-container" className="calendar-container">
-				<MonthViewBox year={year} month={month} prevMonth={prevMonth} nextMonth={nextMonth} />
+				<MonthViewBox year={year} month={month} handleMonthChange={handleMonthChange} prevMonth={prevMonth} nextMonth={nextMonth} />
 				<Week daysOfWeek={daysOfWeek} />
 				<Days
 					tileContent={tileContent}

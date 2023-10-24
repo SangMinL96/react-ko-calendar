@@ -12,7 +12,7 @@
 	width: 100%;
 	display: grid;
 	grid-template-columns: repeat(7, 1fr);
-  margin-bottom: 10px;
+	margin-bottom: 10px;
 }
 .calendar-container__week_view.weekend {
 	width: auto;
@@ -32,27 +32,27 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	width: 115px;
+	width: 150px;
 	height: 30px;
 	margin-bottom: 20px;
 }
 
 .calendar-container__month_view > button {
 	padding: 0 8px;
-	width: 30px;
-	max-width: 30px;
-	height: 30px;
+	width: 24px;
+	max-width: 24px;
+	height: 24px;
 	background-color: #fff;
 	border: none;
 	margin-bottom: 0;
 }
 .calendar-container__month_view__prev_btn {
 	position: absolute;
-	left: -20px;
+	left: -0px;
 }
 .calendar-container__month_view__next_btn {
 	position: absolute;
-	right: -20px;
+	right: -0px;
 }
 
 .calendar-container__month_view.cur_month {
@@ -60,7 +60,8 @@
 	display: inline-flex;
 	justify-content: center;
 	align-items: center;
-	margin: 0 10px;
+	margin: auto 10px;
+	font-size: 18px;
 }
 
 .calendar-container__day_view {
@@ -85,7 +86,7 @@
 	top: 8px;
 	left: 10px;
 	border: none;
-  font-size: 14pxd;
+	font-size: 14pxd;
 }
 .calendar-container__day_view__day.disable {
 	color: #eee;
@@ -102,7 +103,7 @@
 	left: 23px;
 	top: 8px;
 	color: rgb(255, 58, 58);
-  font-size: 12px;
+	font-size: 12px;
 	border: none;
 }
 .calendar-container__month_dropbox {
@@ -118,6 +119,7 @@
 	top: 40px;
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
+	z-index: 10;
 }
 
 .calendar-container__month_dropbox__button {
