@@ -32,31 +32,32 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	width: 150px;
-	height: 30px;
+	width: 180px;
+	height: 40px;
 	margin-bottom: 20px;
 }
 
 .calendar-container__month_view > button {
 	padding: 0 8px;
-	width: 24px;
-	max-width: 24px;
-	height: 24px;
+  width: 40px;
+	max-width: 40px;
+	height: 40px;
 	background-color: #fff;
 	border: none;
 	margin-bottom: 0;
 }
 .calendar-container__month_view__prev_btn {
 	position: absolute;
-	left: -0px;
+	left: 0px;
 }
 .calendar-container__month_view__next_btn {
 	position: absolute;
-	right: -0px;
+	right: 0px;
 }
 
 .calendar-container__month_view.cur_month {
 	width: auto;
+	height: 40px;
 	display: inline-flex;
 	justify-content: center;
 	align-items: center;

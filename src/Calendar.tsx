@@ -44,7 +44,13 @@ function Calendar({ tileContent }: Props) {
 	return (
 		<SwiperProvider onSwiper={onSwiper}>
 			<div data-testid="calendar-container" className="calendar-container">
-				<MonthViewBox year={year} month={month} handleMonthChange={handleMonthChange} prevMonth={prevMonth} nextMonth={nextMonth} />
+				<MonthViewBox
+					year={year}
+					month={month}
+					handleMonthChange={handleMonthChange}
+					prevMonth={prevMonth}
+					nextMonth={nextMonth}
+				/>
 				<Week daysOfWeek={daysOfWeek} />
 				<Days
 					tileContent={tileContent}
