@@ -3,12 +3,12 @@ import { DayType, sDataType } from '../types';
 
 type Props = {
 	days: DayType[];
-	handleDayClick: () => void;
+	handleDayClick?: (date: string) => void;
 	tileContent?: (date: string) => React.ReactElement;
 	sData?: sDataType[];
 };
 
-function Days({ days, sData, tileContent }: Props) {
+function Days({ days, sData, tileContent, handleDayClick }: Props) {
 	return (
 		<div className="calendar-container__day_view">
 			{days.map(({ day, date, isCurrentMonth, isWeekend, weekendType }, index) => {
@@ -24,7 +24,14 @@ function Days({ days, sData, tileContent }: Props) {
 					classNames = 'calendar-container__day_view__day';
 				}
 				return (
-					<button type="button" key={index} className={classNames}>
+					<button
+						type="button"
+						key={index}
+						className={classNames}
+						onClick={() => {
+							if (handleDayClick) handleDayClick(date);
+						}}
+					>
 						<span className="calendar-container__day_view__day__txt">{day}</span>
 						{sDate?.name && (
 							<strong className="calendar-container__day_view__day__sday">{sDate?.name}</strong>

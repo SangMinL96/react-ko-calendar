@@ -12,8 +12,9 @@ dayjs.locale('ko');
 
 type Props = {
 	tileContent?: (date: string) => React.ReactElement;
+	handleDayClick?: (date: string) => void;
 };
-function Calendar({ tileContent }: Props) {
+function Calendar({ tileContent, handleDayClick }: Props) {
 	const daysOfWeek = ['일', '월', '화', '수', '목', '금', '토'];
 	const [date, setDate] = useState<Date>(new Date());
 	const year = dayjs(date).get('year');
@@ -38,8 +39,6 @@ function Calendar({ tileContent }: Props) {
 	const handleMonthChange = (propsDate: string) => {
 		setDate(dayjs(propsDate).toDate());
 	};
-
-	const handleDayClick = () => {};
 
 	return (
 		<SwiperProvider onSwiper={onSwiper}>
