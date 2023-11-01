@@ -23,13 +23,17 @@ function Days({ days, sData, tileContent, handleDayClick }: Props) {
 				} else {
 					classNames = 'calendar-container__day_view__day';
 				}
+				const is클릭막기 = !isCurrentMonth;
 				return (
 					<button
 						type="button"
 						key={index}
 						className={classNames}
 						onClick={() => {
-							if (handleDayClick) handleDayClick(date);
+							if (handleDayClick) {
+								if (is클릭막기) return;
+								handleDayClick(date);
+							}
 						}}
 					>
 						<span className="calendar-container__day_view__day__txt">{day}</span>
