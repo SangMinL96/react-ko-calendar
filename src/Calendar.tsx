@@ -5,7 +5,6 @@ import Days from './components/Days';
 import MonthViewBox from './components/MonthViewBox';
 import SwiperProvider from './components/SwiperProvider';
 import Week from './components/Week';
-import { useSpecialDayData } from './hooks/useSpecialDayData';
 import { createDays } from './lib/utils';
 
 dayjs.locale('ko');
@@ -19,7 +18,6 @@ function Calendar({ tileContent, handleDayClick }: Props) {
 	const [date, setDate] = useState<Date>(new Date());
 	const year = dayjs(date).get('year');
 	const month = dayjs(date).get('month') + 1;
-	const sData = useSpecialDayData({ year, month });
 
 	const prevMonth = () => {
 		setDate((prev) => dayjs(prev).subtract(1, 'month').toDate());
@@ -54,7 +52,6 @@ function Calendar({ tileContent, handleDayClick }: Props) {
 				<Days
 					tileContent={tileContent}
 					days={createDays(date)}
-					sData={sData}
 					handleDayClick={handleDayClick}
 				/>
 			</div>
