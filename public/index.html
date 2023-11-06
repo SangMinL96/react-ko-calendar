@@ -1,21 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="theme-color" content="#000000" />
+		<meta name="description" content="Web site created using create-react-app" />
+		<link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+		<!--
       manifest.json provides metadata used when your web app is installed on a
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
     -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
+		<link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+		<!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
       Only files inside the `public` folder can be referenced from the HTML.
@@ -24,12 +21,35 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>React App</title>
-  </head>
-  <body style="margin: 0;">
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <!--
+    <link href="https://vjs.zencdn.net/7.21.5/video-js.css" rel="stylesheet">
+    <script src="https://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
+		<title>React App</title>
+	</head>
+	<body style="margin: 0">
+    <video
+    id="my-video"
+    class="video-js"
+    controls
+    preload="auto"
+    autoplay
+    width="640"
+    height="264"
+    poster="MY_VIDEO_POSTER.jpg"
+    data-setup="{}"
+  >
+  </video>
+
+  <script src="https://vjs.zencdn.net/7.21.5/video.js"></script>
+  <script>
+    var player = videojs('my-video');
+    console.dir(player)
+    player.src({ type: "application/x-mpegurl", src: "https://encar-vip-output-prod.s3.ap-northeast-2.amazonaws.com/inspection_a/Default/HLS/inspection_a_360.m3u8" });
+    player.ready(function(){
+      player.muted(true);
+      player.play();
+    });
+  </script>
+		<!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
 
@@ -39,5 +59,5 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
-  </body>
+	</body>
 </html>
