@@ -1,0 +1,167 @@
+// SCSS variables are information about icon's compiled state, stored under its original file name
+//
+// .icon-home {
+//   width: $icon-home-width;
+// }
+//
+// The large array-like variables contain all information about a single icon
+// $icon-home: x y offset_x offset_y width height total_width total_height image_path;
+//
+// At the bottom of this section, we provide information about the spritesheet itself
+// $spritesheet: width height image $spritesheet-sprites;
+$arr-paging-next-name: 'arr_paging_next';
+$arr-paging-next-x: 84px;
+$arr-paging-next-y: 0px;
+$arr-paging-next-offset-x: -84px;
+$arr-paging-next-offset-y: 0px;
+$arr-paging-next-width: 36px;
+$arr-paging-next-height: 36px;
+$arr-paging-next-total-width: 120px;
+$arr-paging-next-total-height: 112px;
+$arr-paging-next-image: '/src/assets/images/spr/spr_module_v2_icon.png?1695025416725';
+$arr-paging-next: (84px, 0px, -84px, 0px, 36px, 36px, 120px, 112px, '/src/assets/images/spr/spr_module_v2_icon.png?1695025416725', 'arr_paging_next', );
+$arr-paging-prev-name: 'arr_paging_prev';
+$arr-paging-prev-x: 84px;
+$arr-paging-prev-y: 38px;
+$arr-paging-prev-offset-x: -84px;
+$arr-paging-prev-offset-y: -38px;
+$arr-paging-prev-width: 36px;
+$arr-paging-prev-height: 36px;
+$arr-paging-prev-total-width: 120px;
+$arr-paging-prev-total-height: 112px;
+$arr-paging-prev-image: '/src/assets/images/spr/spr_module_v2_icon.png?1695025416725';
+$arr-paging-prev: (84px, 38px, -84px, -38px, 36px, 36px, 120px, 112px, '/src/assets/images/spr/spr_module_v2_icon.png?1695025416725', 'arr_paging_prev', );
+$icon-check-redline-off-name: 'icon_check_redline_off';
+$icon-check-redline-off-x: 0px;
+$icon-check-redline-off-y: 84px;
+$icon-check-redline-off-offset-x: 0px;
+$icon-check-redline-off-offset-y: -84px;
+$icon-check-redline-off-width: 28px;
+$icon-check-redline-off-height: 28px;
+$icon-check-redline-off-total-width: 120px;
+$icon-check-redline-off-total-height: 112px;
+$icon-check-redline-off-image: '/src/assets/images/spr/spr_module_v2_icon.png?1695025416725';
+$icon-check-redline-off: (0px, 84px, 0px, -84px, 28px, 28px, 120px, 112px, '/src/assets/images/spr/spr_module_v2_icon.png?1695025416725', 'icon_check_redline_off', );
+$icon-check-redline-on-name: 'icon_check_redline_on';
+$icon-check-redline-on-x: 30px;
+$icon-check-redline-on-y: 84px;
+$icon-check-redline-on-offset-x: -30px;
+$icon-check-redline-on-offset-y: -84px;
+$icon-check-redline-on-width: 28px;
+$icon-check-redline-on-height: 28px;
+$icon-check-redline-on-total-width: 120px;
+$icon-check-redline-on-total-height: 112px;
+$icon-check-redline-on-image: '/src/assets/images/spr/spr_module_v2_icon.png?1695025416725';
+$icon-check-redline-on: (30px, 84px, -30px, -84px, 28px, 28px, 120px, 112px, '/src/assets/images/spr/spr_module_v2_icon.png?1695025416725', 'icon_check_redline_on', );
+$icon-radio-redline-off-disabled-name: 'icon_radio_redline__off_disabled';
+$icon-radio-redline-off-disabled-x: 0px;
+$icon-radio-redline-off-disabled-y: 0px;
+$icon-radio-redline-off-disabled-offset-x: 0px;
+$icon-radio-redline-off-disabled-offset-y: 0px;
+$icon-radio-redline-off-disabled-width: 40px;
+$icon-radio-redline-off-disabled-height: 40px;
+$icon-radio-redline-off-disabled-total-width: 120px;
+$icon-radio-redline-off-disabled-total-height: 112px;
+$icon-radio-redline-off-disabled-image: '/src/assets/images/spr/spr_module_v2_icon.png?1695025416725';
+$icon-radio-redline-off-disabled: (0px, 0px, 0px, 0px, 40px, 40px, 120px, 112px, '/src/assets/images/spr/spr_module_v2_icon.png?1695025416725', 'icon_radio_redline__off_disabled', );
+$icon-radio-redline-off-name: 'icon_radio_redline_off';
+$icon-radio-redline-off-x: 42px;
+$icon-radio-redline-off-y: 0px;
+$icon-radio-redline-off-offset-x: -42px;
+$icon-radio-redline-off-offset-y: 0px;
+$icon-radio-redline-off-width: 40px;
+$icon-radio-redline-off-height: 40px;
+$icon-radio-redline-off-total-width: 120px;
+$icon-radio-redline-off-total-height: 112px;
+$icon-radio-redline-off-image: '/src/assets/images/spr/spr_module_v2_icon.png?1695025416725';
+$icon-radio-redline-off: (42px, 0px, -42px, 0px, 40px, 40px, 120px, 112px, '/src/assets/images/spr/spr_module_v2_icon.png?1695025416725', 'icon_radio_redline_off', );
+$icon-radio-redline-on-name: 'icon_radio_redline_on';
+$icon-radio-redline-on-x: 0px;
+$icon-radio-redline-on-y: 42px;
+$icon-radio-redline-on-offset-x: 0px;
+$icon-radio-redline-on-offset-y: -42px;
+$icon-radio-redline-on-width: 40px;
+$icon-radio-redline-on-height: 40px;
+$icon-radio-redline-on-total-width: 120px;
+$icon-radio-redline-on-total-height: 112px;
+$icon-radio-redline-on-image: '/src/assets/images/spr/spr_module_v2_icon.png?1695025416725';
+$icon-radio-redline-on: (0px, 42px, 0px, -42px, 40px, 40px, 120px, 112px, '/src/assets/images/spr/spr_module_v2_icon.png?1695025416725', 'icon_radio_redline_on', );
+$icon-radio-redline-on-disabled-name: 'icon_radio_redline_on_disabled';
+$icon-radio-redline-on-disabled-x: 42px;
+$icon-radio-redline-on-disabled-y: 42px;
+$icon-radio-redline-on-disabled-offset-x: -42px;
+$icon-radio-redline-on-disabled-offset-y: -42px;
+$icon-radio-redline-on-disabled-width: 40px;
+$icon-radio-redline-on-disabled-height: 40px;
+$icon-radio-redline-on-disabled-total-width: 120px;
+$icon-radio-redline-on-disabled-total-height: 112px;
+$icon-radio-redline-on-disabled-image: '/src/assets/images/spr/spr_module_v2_icon.png?1695025416725';
+$icon-radio-redline-on-disabled: (42px, 42px, -42px, -42px, 40px, 40px, 120px, 112px, '/src/assets/images/spr/spr_module_v2_icon.png?1695025416725', 'icon_radio_redline_on_disabled', );
+$spritesheet-width: 120px;
+$spritesheet-height: 112px;
+$spritesheet-image: '/src/assets/images/spr/spr_module_v2_icon.png?1695025416725';
+$spritesheet-sprites: ($arr-paging-next, $arr-paging-prev, $icon-check-redline-off, $icon-check-redline-on, $icon-radio-redline-off-disabled, $icon-radio-redline-off, $icon-radio-redline-on, $icon-radio-redline-on-disabled, );
+$spritesheet: (120px, 112px, '/src/assets/images/spr/spr_module_v2_icon.png?1695025416725', $spritesheet-sprites, );
+
+// The provided mixins are intended to be used with the array-like variables
+//
+// .icon-home {
+//   @include sprite-width($icon-home);
+// }
+//
+// .icon-email {
+//   @include sprite($icon-email);
+// }
+//
+// Example usage in HTML:
+//
+// `display: block` sprite:
+// <div class="icon-home"></div>
+//
+// To change `display` (e.g. `display: inline-block;`), we suggest using a common CSS class:
+//
+// // CSS
+// .icon {
+//   display: inline-block;
+// }
+//
+// // HTML
+// <i class="icon icon-home"></i>
+@mixin sprite-width($sprite) {
+  width: nth($sprite, 5);
+}
+
+@mixin sprite-height($sprite) {
+  height: nth($sprite, 6);
+}
+
+@mixin sprite-position($sprite) {
+  $sprite-offset-x: nth($sprite, 3);
+  $sprite-offset-y: nth($sprite, 4);
+  background-position: $sprite-offset-x  $sprite-offset-y;
+}
+
+@mixin sprite-image($sprite) {
+  $sprite-image: nth($sprite, 9);
+  background-image: url(#{$sprite-image});
+}
+
+@mixin sprite($sprite) {
+  @include sprite-image($sprite);
+  @include sprite-position($sprite);
+  @include sprite-width($sprite);
+  @include sprite-height($sprite);
+}
+
+// The `sprites` mixin generates identical output to the CSS template
+//   but can be overridden inside of SCSS
+//
+// @include sprites($spritesheet-sprites);
+@mixin sprites($sprites) {
+  @each $sprite in $sprites {
+    $sprite-name: nth($sprite, 10);
+    .#{$sprite-name} {
+      @include sprite($sprite);
+    }
+  }
+}

@@ -1,0 +1,43 @@
+@font-face {
+	font-family: 'Pretendard';
+	src: url($pretendardUrlWoff2) format('woff2'), url($pretendardUrlWoff) format('woff');
+	font-style: normal;
+	font-display: swap;
+	font-weight: 500;
+}
+@font-face {
+	font-family: 'Pretendard';
+	src: url($pretendardUrlSemiWoff2) format('woff2'), url($pretendardUrlSemiWoff) format('woff');
+	font-style: normal;
+	font-display: swap;
+	font-weight: 600;
+}
+@font-face {
+	font-family: 'Pretendard';
+	src: url($pretendardUrlBoldWoff2) format('woff2'), url($pretendardUrlBoldWoff) format('woff');
+	font-style: normal;
+	font-display: swap;
+	font-weight: 700;
+}
+
+body,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,legend,textarea,p,blockquote,th,td,input,select,textarea,button{margin:0;padding:0;letter-spacing:-0.5px}
+fieldset,img{border:0 none}
+dl,ul,ol,menu,li{list-style:none}
+blockquote,q{quotes:none}
+input,select,textarea,button{vertical-align:middle}
+img{vertical-align:top}
+button{border:0 none;background-color:transparent;cursor:pointer}
+table{border-collapse:collapse;border-spacing:0}
+input[type='text'],input[type='password'],input[type='submit'],input[type='search'],input[type='tel'],input[type='email'],html input[type='button'],input[type='reset']{-webkit-appearance:none;border-radius:0}
+address,caption,cite,code,dfn,em,var,i{font-style:normal;font-weight:normal}
+article,aside,dialog,footer,header,section,footer,nav,figure{display:block}
+body,input,select,textarea,table,button,pre{font-size:14px;line-height:1.5;font-family:'Pretendard','Malgun Gothic','맑은 고딕',sans-serif;color:#333}
+html{height:100%}
+body{height:100%;-webkit-text-size-adjust:none}
+hr{display:none}
+a{color:#333;text-decoration:none}
+a:active,a:hover{text-decoration:none}
+caption,legend{font-size:0;line-height:0;visibility:hidden}
+input:focus,select:focus,textarea:focus{outline-width:thin}
+
+.blind{overflow:hidden;position:absolute;width:1px;height:1px;margin:-1px;clip:rect(0 0 0 0)}

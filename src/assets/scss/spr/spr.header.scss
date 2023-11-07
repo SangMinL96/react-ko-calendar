@@ -1,0 +1,169 @@
+// SCSS variables are information about icon's compiled state, stored under its original file name
+//
+// .icon-home {
+//   width: $icon-home-width;
+// }
+//
+// The large array-like variables contain all information about a single icon
+// $icon-home: x y offset_x offset_y width height total_width total_height image_path;
+//
+// At the bottom of this section, we provide information about the spritesheet itself
+// $spritesheet: width height image $spritesheet-sprites;
+$ico-back-name: 'ico_back';
+$ico-back-x: 38px;
+$ico-back-y: 38px;
+$ico-back-offset-x: -38px;
+$ico-back-offset-y: -38px;
+$ico-back-width: 34px;
+$ico-back-height: 34px;
+$ico-back-total-width: 138px;
+$ico-back-total-height: 105px;
+$ico-back-image: '/src/assets/images/spr/spr_header.png?1693382444030';
+$ico-back: (38px, 38px, -38px, -38px, 34px, 34px, 138px, 105px, '/src/assets/images/spr/spr_header.png?1693382444030', 'ico_back', );
+$ico-buger-name: 'ico_buger';
+$ico-buger-x: 0px;
+$ico-buger-y: 76px;
+$ico-buger-offset-x: 0px;
+$ico-buger-offset-y: -76px;
+$ico-buger-width: 36px;
+$ico-buger-height: 29px;
+$ico-buger-total-width: 138px;
+$ico-buger-total-height: 105px;
+$ico-buger-image: '/src/assets/images/spr/spr_header.png?1693382444030';
+$ico-buger: (0px, 76px, 0px, -76px, 36px, 29px, 138px, 105px, '/src/assets/images/spr/spr_header.png?1693382444030', 'ico_buger', );
+$ico-buger-big-name: 'ico_buger_big';
+$ico-buger-big-x: 0px;
+$ico-buger-big-y: 0px;
+$ico-buger-big-offset-x: 0px;
+$ico-buger-big-offset-y: 0px;
+$ico-buger-big-width: 42px;
+$ico-buger-big-height: 36px;
+$ico-buger-big-total-width: 138px;
+$ico-buger-big-total-height: 105px;
+$ico-buger-big-image: '/src/assets/images/spr/spr_header.png?1693382444030';
+$ico-buger-big: (0px, 0px, 0px, 0px, 42px, 36px, 138px, 105px, '/src/assets/images/spr/spr_header.png?1693382444030', 'ico_buger_big', );
+$ico-my-name: 'ico_my';
+$ico-my-x: 44px;
+$ico-my-y: 0px;
+$ico-my-offset-x: -44px;
+$ico-my-offset-y: 0px;
+$ico-my-width: 36px;
+$ico-my-height: 36px;
+$ico-my-total-width: 138px;
+$ico-my-total-height: 105px;
+$ico-my-image: '/src/assets/images/spr/spr_header.png?1693382444030';
+$ico-my: (44px, 0px, -44px, 0px, 36px, 36px, 138px, 105px, '/src/assets/images/spr/spr_header.png?1693382444030', 'ico_my', );
+$ico-prev-name: 'ico_prev';
+$ico-prev-x: 82px;
+$ico-prev-y: 36px;
+$ico-prev-offset-x: -82px;
+$ico-prev-offset-y: -36px;
+$ico-prev-width: 20px;
+$ico-prev-height: 36px;
+$ico-prev-total-width: 138px;
+$ico-prev-total-height: 105px;
+$ico-prev-image: '/src/assets/images/spr/spr_header.png?1693382444030';
+$ico-prev: (82px, 36px, -82px, -36px, 20px, 36px, 138px, 105px, '/src/assets/images/spr/spr_header.png?1693382444030', 'ico_prev', );
+$ico-prev-white-name: 'ico_prev_white';
+$ico-prev-white-x: 118px;
+$ico-prev-white-y: 0px;
+$ico-prev-white-offset-x: -118px;
+$ico-prev-white-offset-y: 0px;
+$ico-prev-white-width: 20px;
+$ico-prev-white-height: 36px;
+$ico-prev-white-total-width: 138px;
+$ico-prev-white-total-height: 105px;
+$ico-prev-white-image: '/src/assets/images/spr/spr_header.png?1693382444030';
+$ico-prev-white: (118px, 0px, -118px, 0px, 20px, 36px, 138px, 105px, '/src/assets/images/spr/spr_header.png?1693382444030', 'ico_prev_white', );
+$ico-x-name: 'ico_x';
+$ico-x-x: 82px;
+$ico-x-y: 0px;
+$ico-x-offset-x: -82px;
+$ico-x-offset-y: 0px;
+$ico-x-width: 34px;
+$ico-x-height: 34px;
+$ico-x-total-width: 138px;
+$ico-x-total-height: 105px;
+$ico-x-image: '/src/assets/images/spr/spr_header.png?1693382444030';
+$ico-x: (82px, 0px, -82px, 0px, 34px, 34px, 138px, 105px, '/src/assets/images/spr/spr_header.png?1693382444030', 'ico_x', );
+$ico-x-white-name: 'ico_x_white';
+$ico-x-white-x: 0px;
+$ico-x-white-y: 38px;
+$ico-x-white-offset-x: 0px;
+$ico-x-white-offset-y: -38px;
+$ico-x-white-width: 36px;
+$ico-x-white-height: 36px;
+$ico-x-white-total-width: 138px;
+$ico-x-white-total-height: 105px;
+$ico-x-white-image: '/src/assets/images/spr/spr_header.png?1693382444030';
+$ico-x-white: (0px, 38px, 0px, -38px, 36px, 36px, 138px, 105px, '/src/assets/images/spr/spr_header.png?1693382444030', 'ico_x_white', );
+$spritesheet-width: 138px;
+$spritesheet-height: 105px;
+$spritesheet-image: '/src/assets/images/spr/spr_header.png?1693382444030';
+$spritesheet-sprites: ($ico-back, $ico-buger, $ico-buger-big, $ico-my, $ico-prev, $ico-prev-white, $ico-x, $ico-x-white, );
+$spritesheet: (138px, 105px, '/src/assets/images/spr/spr_header.png?1693382444030', $spritesheet-sprites, );
+
+// The provided mixins are intended to be used with the array-like variables
+//
+// .icon-home {
+//   @include sprite-width($icon-home);
+// }
+//
+// .icon-email {
+//   @include sprite($icon-email);
+// }
+//
+// Example usage in HTML:
+//
+// `display: block` sprite:
+// <div class="icon-home"></div>
+//
+// To change `display` (e.g. `display: inline-block;`), we suggest using a common CSS class:
+//
+// // CSS
+// .icon {
+//   display: inline-block;
+// }
+//
+// // HTML
+// <i class="icon icon-home"></i>
+@mixin sprite-width($sprite) {
+  width: nth($sprite, 5);
+}
+
+@mixin sprite-height($sprite) {
+  height: nth($sprite, 6);
+}
+
+@mixin sprite-position($sprite) {
+  $sprite-offset-x: nth($sprite, 3);
+  $sprite-offset-y: nth($sprite, 4);
+  background-position: $sprite-offset-x  $sprite-offset-y;
+}
+
+@mixin sprite-image($sprite) {
+  $sprite-image: nth($sprite, 9);
+  background-image: url(#{$sprite-image});
+}
+
+@mixin sprite($sprite) {
+  @include sprite-image($sprite);
+  @include sprite-position($sprite);
+  @include sprite-width($sprite);
+  @include sprite-height($sprite);
+}
+
+// The `sprites` mixin generates identical output to the CSS template
+//   but can be overridden inside of SCSS
+//
+// @include sprites($spritesheet-sprites);
+@mixin sprites($sprites) {
+  @each $sprite in $sprites {
+    $sprite-name: nth($sprite, 10);
+    .#{$sprite-name} {
+      @include sprite($sprite);
+    }
+  }
+}
+
+.test{@include util-sprite($arr_paging_next)}

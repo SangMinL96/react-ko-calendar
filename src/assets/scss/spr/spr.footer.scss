@@ -1,0 +1,134 @@
+// SCSS variables are information about icon's compiled state, stored under its original file name
+//
+// .icon-home {
+//   width: $icon-home-width;
+// }
+//
+// The large array-like variables contain all information about a single icon
+// $icon-home: x y offset_x offset_y width height total_width total_height image_path;
+//
+// At the bottom of this section, we provide information about the spritesheet itself
+// $spritesheet: width height image $spritesheet-sprites;
+$ico-arr-name: 'ico_arr';
+$ico-arr-x: 124px;
+$ico-arr-y: 0px;
+$ico-arr-offset-x: -124px;
+$ico-arr-offset-y: 0px;
+$ico-arr-width: 12px;
+$ico-arr-height: 20px;
+$ico-arr-total-width: 136px;
+$ico-arr-total-height: 122px;
+$ico-arr-image: '/src/assets/images/spr/spr_footer.png?1693380825404';
+$ico-arr: (124px, 0px, -124px, 0px, 12px, 20px, 136px, 122px, '/src/assets/images/spr/spr_footer.png?1693380825404', 'ico_arr', );
+$sns-blog-name: 'sns_blog';
+$sns-blog-x: 0px;
+$sns-blog-y: 0px;
+$sns-blog-offset-x: 0px;
+$sns-blog-offset-y: 0px;
+$sns-blog-width: 60px;
+$sns-blog-height: 60px;
+$sns-blog-total-width: 136px;
+$sns-blog-total-height: 122px;
+$sns-blog-image: '/src/assets/images/spr/spr_footer.png?1693380825404';
+$sns-blog: (0px, 0px, 0px, 0px, 60px, 60px, 136px, 122px, '/src/assets/images/spr/spr_footer.png?1693380825404', 'sns_blog', );
+$sns-facebook-name: 'sns_facebook';
+$sns-facebook-x: 62px;
+$sns-facebook-y: 0px;
+$sns-facebook-offset-x: -62px;
+$sns-facebook-offset-y: 0px;
+$sns-facebook-width: 60px;
+$sns-facebook-height: 60px;
+$sns-facebook-total-width: 136px;
+$sns-facebook-total-height: 122px;
+$sns-facebook-image: '/src/assets/images/spr/spr_footer.png?1693380825404';
+$sns-facebook: (62px, 0px, -62px, 0px, 60px, 60px, 136px, 122px, '/src/assets/images/spr/spr_footer.png?1693380825404', 'sns_facebook', );
+$sns-instar-name: 'sns_instar';
+$sns-instar-x: 0px;
+$sns-instar-y: 62px;
+$sns-instar-offset-x: 0px;
+$sns-instar-offset-y: -62px;
+$sns-instar-width: 60px;
+$sns-instar-height: 60px;
+$sns-instar-total-width: 136px;
+$sns-instar-total-height: 122px;
+$sns-instar-image: '/src/assets/images/spr/spr_footer.png?1693380825404';
+$sns-instar: (0px, 62px, 0px, -62px, 60px, 60px, 136px, 122px, '/src/assets/images/spr/spr_footer.png?1693380825404', 'sns_instar', );
+$sns-youtube-name: 'sns_youtube';
+$sns-youtube-x: 62px;
+$sns-youtube-y: 62px;
+$sns-youtube-offset-x: -62px;
+$sns-youtube-offset-y: -62px;
+$sns-youtube-width: 60px;
+$sns-youtube-height: 60px;
+$sns-youtube-total-width: 136px;
+$sns-youtube-total-height: 122px;
+$sns-youtube-image: '/src/assets/images/spr/spr_footer.png?1693380825404';
+$sns-youtube: (62px, 62px, -62px, -62px, 60px, 60px, 136px, 122px, '/src/assets/images/spr/spr_footer.png?1693380825404', 'sns_youtube', );
+$spritesheet-width: 136px;
+$spritesheet-height: 122px;
+$spritesheet-image: '/src/assets/images/spr/spr_footer.png?1693380825404';
+$spritesheet-sprites: ($ico-arr, $sns-blog, $sns-facebook, $sns-instar, $sns-youtube, );
+$spritesheet: (136px, 122px, '/src/assets/images/spr/spr_footer.png?1693380825404', $spritesheet-sprites, );
+
+// The provided mixins are intended to be used with the array-like variables
+//
+// .icon-home {
+//   @include sprite-width($icon-home);
+// }
+//
+// .icon-email {
+//   @include sprite($icon-email);
+// }
+//
+// Example usage in HTML:
+//
+// `display: block` sprite:
+// <div class="icon-home"></div>
+//
+// To change `display` (e.g. `display: inline-block;`), we suggest using a common CSS class:
+//
+// // CSS
+// .icon {
+//   display: inline-block;
+// }
+//
+// // HTML
+// <i class="icon icon-home"></i>
+@mixin sprite-width($sprite) {
+  width: nth($sprite, 5);
+}
+
+@mixin sprite-height($sprite) {
+  height: nth($sprite, 6);
+}
+
+@mixin sprite-position($sprite) {
+  $sprite-offset-x: nth($sprite, 3);
+  $sprite-offset-y: nth($sprite, 4);
+  background-position: $sprite-offset-x  $sprite-offset-y;
+}
+
+@mixin sprite-image($sprite) {
+  $sprite-image: nth($sprite, 9);
+  background-image: url(#{$sprite-image});
+}
+
+@mixin sprite($sprite) {
+  @include sprite-image($sprite);
+  @include sprite-position($sprite);
+  @include sprite-width($sprite);
+  @include sprite-height($sprite);
+}
+
+// The `sprites` mixin generates identical output to the CSS template
+//   but can be overridden inside of SCSS
+//
+// @include sprites($spritesheet-sprites);
+@mixin sprites($sprites) {
+  @each $sprite in $sprites {
+    $sprite-name: nth($sprite, 10);
+    .#{$sprite-name} {
+      @include sprite($sprite);
+    }
+  }
+}

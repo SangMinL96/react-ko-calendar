@@ -1,0 +1,19 @@
+//전체 스프라이트 이미지 정보 import
+@mixin util-sprite($sprite){
+  $sprite-offset-x: calc(nth($sprite, 3) / 2);
+
+  $sprite-offset-y: calc(nth($sprite, 4) / 2);
+  width: calc(nth($sprite, 5) / 2);
+  height: calc(nth($sprite, 6) / 2);
+  background: url(nth($sprite, 9)) $sprite-offset-x $sprite-offset-y no-repeat;
+  background-size: calc(nth($sprite, 7) / 2);
+}
+
+//oocss 방식 사용시 개별이미지 정보 import (width, height, background-position)
+@mixin util-unit($sprite){
+  $sprite-offset-x: calc(nth($sprite, 3) / 2);
+  $sprite-offset-y: calc(nth($sprite, 4) / 2);
+  width: calc(nth($sprite, 5) / 2);
+  height: calc(nth($sprite, 6) / 2);
+  background-position: $sprite-offset-x $sprite-offset-y;
+}

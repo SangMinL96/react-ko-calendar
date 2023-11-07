@@ -98,15 +98,7 @@
 .calendar-container__day_view__day.weekend_sunday {
 	color: rgb(255, 58, 58);
 }
-.calendar-container__day_view__day__sday {
-	display: inline;
-	position: absolute;
-	left: 23px;
-	top: 8px;
-	color: rgb(255, 58, 58);
-	font-size: 12px;
-	border: none;
-}
+
 .calendar-container__month_dropbox {
 	position: absolute;
 	background-color: #fff;
